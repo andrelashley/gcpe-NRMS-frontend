@@ -12,9 +12,12 @@ import { NewsReleaseService } from './_services/newsrelease.service';
 import { AlertifyService } from './_services/alertify.service';
 import { TopicsListComponent } from './topics/topics-list/topics-list.component';
 import { TopicsCardComponent } from './topics/topics-card/topics-card.component';
+import { TopicsDetailComponent } from './topics/topics-detail/topics-detail.component';
 import { NewsReleaseListResolver } from './_resolvers/news-release-list.resolver';
 import { FormsModule } from '@angular/forms';
 import { CollapseModule } from 'ngx-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap';
+import { NrmsapiService } from './_services/nrmsapi.service';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { MinistrySignupComponent } from './auth/ministry-signup/ministry-signup.component';
@@ -34,6 +37,7 @@ import { CheckboxComponent } from './controls/checkbox/checkbox.component';
       HomeComponent,
       TopicsListComponent,
       TopicsCardComponent,
+      TopicsDetailComponent,
       LoginComponent,
       SignupComponent,
       MinistrySignupComponent,
@@ -52,12 +56,14 @@ import { CheckboxComponent } from './controls/checkbox/checkbox.component';
       PaginationModule.forRoot(),
       FormsModule,
       CollapseModule.forRoot(),
-      TypeaheadModule.forRoot()
+      TypeaheadModule.forRoot(),
+      BsDropdownModule.forRoot()
    ],
    providers: [
     NewsReleaseService,
     AlertifyService,
     NewsReleaseListResolver,
+    NrmsapiService,
     SearchSuggestionsResolver,
     RecentlyViewedArticlesResolver
     ],
